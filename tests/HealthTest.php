@@ -16,7 +16,7 @@ final class HealthTest extends WebTestCase
         $data = json_decode($client->getResponse()->getContent(), true);
 
         $this->assertIsArray($data);
-        $this->assertSame('nope', $data['status'] ?? null);
+        $this->assertSame('ok', $data['status'] ?? null);
         $this->assertSame('ok', $data['db'] ?? null);
     }
 } 
