@@ -47,5 +47,8 @@ jobs:
       - name: Security audit (composer audit)
         run: composer audit --no-interaction
         
+      - name: Lint (php-cs-fixer)
+        run: composer lint
+
       - name: Run tests
         run: composer test

@@ -19,4 +19,4 @@ final class HealthTest extends WebTestCase
         $this->assertSame('ok', $data['status'] ?? null);
         $this->assertSame('ok', $data['db'] ?? null);
     }
-} 
+}
