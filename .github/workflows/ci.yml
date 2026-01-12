@@ -38,10 +38,16 @@ jobs:
 
       - name: Install dependencies
         run: composer install --no-interaction --prefer-dist
+      
+      
 
       - name: Configure test DATABASE_URL
         run: |
           echo 'DATABASE_URL="mysql://root:root@127.0.0.1:3306/taskboard?serverVersion=8.0.0&charset=utf8mb4"' > .env.test.local
 
+      - name: Security audit (composer audit)
+        run: composer audit --no-interaction
+
+        
       - name: Run tests
         run: composer test
